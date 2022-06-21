@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""A simple Square class"""
+"""Define classes for a singly-linked list."""
 
 
-class Square:
-    """class Square that defines a square and compute area"""
+class Node:
+    """Represent a node in a singly-linked list."""
     def __init__(self, data, next_node=None):
         """Initialize a new Node.
         Args:
