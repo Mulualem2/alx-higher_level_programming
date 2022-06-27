@@ -2,7 +2,6 @@
 """Defines a Rectangle class."""
 
 
-
 class Rectangle:
     """A Rectangle class with attributes  width and height"""
     def __init__(self, width=0, height=0):
