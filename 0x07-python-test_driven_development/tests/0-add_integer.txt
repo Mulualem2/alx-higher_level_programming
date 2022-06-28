@@ -1,0 +1,104 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+This is a test document based on 0-add_integer.py
+Each '>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+Import function:
+        >>> add_integer = __import__('0-add_integer').add_integer
+
+Test: a and b integers
+        >>> add_integer(1, 2)
+        3
+
+Test: a and b integers with a negative value
+        >>> add_integer(100, -2)
+        98
+
+Test: a and be negative integers
+        >>> add_integer(-2, -2)
+        -4
+
+Test: only a as positive integer
+        >>> add_integer(2)
+        100
+
+Test: only a as negative integer
+        >>> add_integer(-2)
+        96
+
+Test: a as a float, b as a negative integer
+        >>> add_integer(100.3, -2)
+        98
+
+Test: a as positive integer, b as float
+        >>> add_integer(2, 100.3)
+        102
+
+Test: only a as float
+        >>> add_integer(100.3)
+        198
+
+Test: a as exponential, b as positive integer
+        >>> add_integer(1e100, 2)
+        10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815106
+
+Test: a as positive integer, b as exponential
+        >>> add_integer(2, 1e100)
+        10000000000000000159028911097599180468360808563945281389781327557747838772170381060813469985856815106
+
+Test: a and b as exponentials
+        >>> add_integer(1e100, 1e100)
+        20000000000000000318057822195198360936721617127890562779562655115495677544340762121626939971713630208
+
+Test: no arguments passed
+        >>> add_integer()
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test: 'None' passed
+        >>> add_integer(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+Test: a as variable, b as positive integer
+        >>> add_integer(a, 4)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'a' is not defined
+
+Test: a as positive integer, b as variable
+        >>> add_integer(4, a)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'a' is not defined
+
+Test: a and b as variables
+        >>> add_integer(a, a)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'a' is not defined
+
+Test: only a as variable
+        >>> add_integer(a)
+        Traceback (most recent call last):
+        ...
+        NameError: name 'a' is not defined
+
+Test: a as symbol, b as positive integer
+        >>> add_integer(*, 4)
+        Traceback (most recent call last):
+        ...
+        SyntaxError: invalid syntax
+
+Test: a as positive integer, b as symbol
+        >>> add_integer(4, *)
+        Traceback (most recent call last):
+        ...
+        SyntaxError: invalid syntax

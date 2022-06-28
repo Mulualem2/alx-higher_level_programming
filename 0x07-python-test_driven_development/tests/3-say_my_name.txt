@@ -1,0 +1,60 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+This is a test document based on 3-say_my_name.py
+Each '>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+Import function:
+        >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test: first and last as strings
+        >>> say_my_name("John", "Smith")
+        My name is John Smith
+
+Test: only first
+        >>> say_my_name("Bob")
+        My name is Bob 
+
+Test: first and last as integers
+        >>> say_my_name(1, 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Test: first as string, last as integer
+        >>> say_my_name("Bob", 2)
+        Traceback (most recent call last):
+        ...
+        TypeError: last_name must be a string
+
+Test: first as integer, last as string
+        >>> say_my_name(1, "Bob")
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Test: only first as integer
+        >>> say_my_name(1)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string
+
+Test: empty first and empty last
+        >>> say_my_name("", "")
+        My name is  
+
+Test: no arguments passed
+        >>> say_my_name()
+        Traceback (most recent call last):
+        ...
+        TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+Test: 'None' passed
+        >>> say_my_name(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: first_name must be a string

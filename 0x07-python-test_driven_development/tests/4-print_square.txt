@@ -1,0 +1,61 @@
+The ``4-print_square`` module
+======================
+
+Using ``print_square``
+-------------------
+This is a test document based on 4-print_square.py
+Each '>>' line is run as if in a python shell, and counts as a test.
+The next line, if not '>>' is the expected output of the previous line.
+If anything doesn't match exactly (including trailing spaces), the test fails.
+
+Import function:
+        >>> print_square = __import__('4-print_square').print_square
+
+Test: size as positive integer
+        >>> print_square(4)
+        ####
+        ####
+        ####
+        ####
+
+Test: two arguments passed
+        >>> print_square(4, 3)
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() takes 1 positional argument but 2 were given
+
+Test: size as string
+        >>> print_square("Hello")
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+Test:size as negative integer
+        >>> print_square(-3)
+        Traceback (most recent call last):
+        ...
+        ValueError: size must be >= 0
+
+Test: size as float
+        >>> print_square(300.5)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+Test: size as negative float
+        >>> print_square(-300.5)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+Test: no argument passed
+        >>> print_square()
+        Traceback (most recent call last):
+        ...
+        TypeError: print_square() missing 1 required positional argument: 'size'
+
+Test: 'None' passed
+        >>> print_square(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
