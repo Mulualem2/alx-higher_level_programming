@@ -3,10 +3,9 @@
 
 
 class MyList(list):
-    """prints the list sorted"""
-
+    """ Manage a list of integers
+    """
     def print_sorted(self):
-        """print the list sorted"""
-        new_list = self[:]
-        new_list.sort()
-        print("{}".format(new_list))
+        """ Print a list sorted in ascending order
+        """
+        print(sorted(self))
