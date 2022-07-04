@@ -1,0 +1,100 @@
+        >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+        >>> bg = BaseGeometry()
+        >>> bg.area()
+        Traceback (most recent call last):
+        ...
+        Exception: area() is not implemented
+
+Test: Passing one string one int
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("name", 50)
+
+Test: Passing two strings
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("name", "John")
+        Traceback (most recent call last):
+        ...
+        TypeError: name must be an integer
+
+Test: Passing two ints
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator(5, 10)
+
+Test: Passing only one string
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("name")
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test: Passing only one int
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator(20)
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+Test: Passing one string and inf
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("20", float('inf))
+        Traceback (most recent call last):
+        ...
+        SyntaxError: EOL while scanning string literal
+
+Test: Passing one string and a float
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("float", 100.5)
+        Traceback (most recent call last):
+        ...
+        TypeError: float must be an integer
+
+Test: Passing one string and a complex number
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("float", 5j)
+        Traceback (most recent call last):
+        ...
+        TypeError: float must be an integer
+
+Test: Passing one string and a boolean
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("float", False)
+        Traceback (most recent call last):
+        ...
+        TypeError: float must be an integer
+
+Test: Passing one string and a list
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("float", [0, 1, 2])
+        Traceback (most recent call last):
+        ...
+        TypeError: float must be an integer
+
+Test: Passing one string and None
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator("20", None)
+        Traceback (most recent call last):
+        ...
+        TypeError: 20 must be an integer
+
+Test: Passing None, None
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator(None, None)
+        Traceback (most recent call last):
+        ...
+        TypeError: None must be an integer
+
+Test: Passing None
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator(None)
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Test: Passing no arguments
+        >>> bg = BaseGeometry()
+        >>> bg.integer_validator()
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
