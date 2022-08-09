@@ -1,3 +1,2 @@
---list of available tables in  the database
-USE `mysql`;
+-- list of available tables in  the database
 SHOW TABLES;
