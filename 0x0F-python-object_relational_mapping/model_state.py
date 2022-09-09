@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""
-Defines a State model.
-Inherits from SQLAlchemy Base and links to the MySQL table states.
-"""
-
+"""Starts the link with the database"""
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
+
 
 class State(Base):
     """A class that links with MySQL table states"""
